@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ja">
+ 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ポートフォリオ | 吉川 優</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">Y-M</div>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav class="nav-menu" id="nav-menu">
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#works">Works</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <h1 class="fade-in">Masaru Yoshikawa</h1>
+  <p class="fade-in">Web & Video Creator</p>
+  
+
+  <!-- HEROセクション -->
+  <section class="hero" id="hero">
+    <div class="hero-text">
+      <h1>Masaru Yoshikawa</h1>
+      <p><span id="typed"></span></p>
+      <p>Design × Video × Code で、心を動かす。</p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <h2>About</h2>
+    <img src="images/profile.jpg" alt="吉川優の写真" class="profile-img">
+    <p>こんにちは！吉川 優です。Webサイト制作や映像制作を通して、伝わるデザインと感動する体験を届けています。</p>
+    <button id="open-modal">プロフィールを見る</button>
+  </section>
+
+  <!-- モーダル -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="close-modal" class="close">&times;</span>
+      <h3>自己紹介</h3>
+      <img src="images/profile.jpg" alt="吉川優" class="profile-img">
+      <p>こんにちは、吉川 優です。</p>
+      <p>Webサイト制作と映像制作を中心に活動しています。デザインだけでなく、コードを書くことやモーショングラフィックスも得意です。</p>
+      <h4>スキル</h4>
+      <ul style="text-align: left;">
+        <li>HTML / CSS / JavaScript</li>
+        <li>CapCut</li>
+        <li>Figma / Photoshop</li>
+        <li>Motion Graphics制作</li>
+      </ul>
+      <h4>好きなこと</h4>
+      <p>映画鑑賞、アニメ、ゲーム</p>
+    </div>
+  </div>
+  
+  <!-- WORKS -->
+  <section class="works" id="works">
+    <h2>Works</h2>
+    <div class="work-list">
+      <div class="work-item">
+        <img src="work1.jpg" alt="作品1">
+        <p>Webサイトデザイン（まだ未定）</p>
+      </div>
+      <div class="work-item">
+        <img src="work1.jpg" alt="作品2">
+        <p>映像制作（制作中）</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <h2>Contact</h2>
+    <p>お仕事のご相談・ご依頼はInstagramのDMまでご連絡ください。</p>
+    <a href="https://www.instagram.com/03y__.m/" target="_blank" class="instagram-button">
+      <i class="fab fa-instagram"></i> Instagramで連絡する
+    </a>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Masaru Yoshikawa. All Rights Reserved.</p>
+  </footer>
+  
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    const openBtn = document.getElementById('open-modal');
+    const closeBtn = document.getElementById('close-modal');
+    const modal = document.getElementById('modal');
+
+    openBtn.addEventListener('click', () => {
+      modal.style.display = 'flex';
+    });
+
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    // 背景クリックでも閉じる
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.getElementById("nav-menu");
+
+    hamburger.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    var typed = new Typed('#typed', {
+      strings: ['Web & Video Creator', 'Web Designer', 'Motion Graphics', 'Creative Coder'],
+      typeSpeed: 60,
+      backSpeed: 30,
+      backDelay: 1500,
+      loop: true
+    });
+  </script>
+</body>
+</html>
